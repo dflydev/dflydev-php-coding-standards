@@ -1,0 +1,43 @@
+# Dragonfly PHP Coding Standards
+
+### Usage
+
+```bash
+composer require dflydev/php-coding-standards
+```
+
+Create a new `.php-cs-fixer.dist.php` file and within it add the following:
+
+```php
+use Dflydev\PhpCsFixer\DflyConfig;
+use PhpCsFixer\Finder;
+
+$finder = Finder::create()
+    ->in(__DIR__.'/src');
+
+return (new DflyConfig)
+    ->setFinder($finder)
+    ->setUsingCache(false)
+    ->setRiskyAllowed(true);
+```
+
+You can always change the default rule set by passing your rules to the function `setRules` like
+
+```php
+use Dflydev\PhpCsFixer\DflyConfig;
+use PhpCsFixer\Finder;
+
+$rules = [
+    '@PER' => true,
+    '@Symfony' => true,
+];
+
+$finder = Finder::create()
+    ->in(__DIR__.'/src');
+
+return (new DflyConfig)
+    ->setFinder($finder)
+    ->setRules($rules)    
+    ->setUsingCache(false)
+    ->setRiskyAllowed(true);
+```
