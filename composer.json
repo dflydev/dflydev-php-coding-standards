@@ -1,0 +1,21 @@
+{
+    "name": "dflydev/php-coding-standards",
+    "type": "library",
+    "description": "This repository contains the coding standards used by Dragonfly team.",
+    "homepage": "https://github.com/dflydev/dflydev-php-coding-standards",
+    "keywords": ["coding style", "coding-standards", "standards", "coding", "coding standards"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dragonfly Development Inc.",
+            "email": "info@dflydev.com",
+            "homepage": "http://dflydev.com"
+        },
+        {
+            "name": "Beau Simensen",
+            "email": "beau@dflydev.com",
+            "homepage": "http://beausimensen.com"
+        }
+    ],    
+    "minimum-stability": "stable"
+}
