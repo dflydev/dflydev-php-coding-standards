@@ -1,19 +1,21 @@
 <?php 
 
-$year = date('Y');
+use Ergebnis\License;
 
-$header = <<< EOF
- Copyright (c) $year dflydev.
- 
- For the full copyright and license information, please view
- the LICENSE.md file that was distributed with this source code.
+$license = License\Type\MIT::text(__DIR__ . '/LICENSE',
+    License\Range::since(
+        License\Year::fromString(date('Y')),
+        new \DateTimeZone('UTC')
+    ),
+    License\Holder::fromString('Dragonfly Development Inc'),
+    License\Url::fromString('https://github.com/dflydev/dflydev-php-coding-standards')
+);
 
- @see https://github.com/dflydev/dflydev-php-coding-standards
-EOF;
+$license->save();
 
 use Ergebnis\PhpCsFixer\Config;
 
-$config = Config\Factory::fromRuleSet(new Dflydev\PhpCsFixer\Config\RuleSet\Dflydev($header));
+$config = Config\Factory::fromRuleSet(new Dflydev\PhpCsFixer\Config\RuleSet\Dflydev($license->header()));
 
 $config->getFinder()->in(__DIR__);
 $config->setCacheFile(__DIR__ . '/.php-cs-fixer.cache');

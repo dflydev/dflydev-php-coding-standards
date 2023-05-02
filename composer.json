@@ -30,7 +30,8 @@
     "friendsofphp/php-cs-fixer": "~3.16.0"
   },
   "require-dev": {
-    "ergebnis/composer-normalize": "^2.30.2"
+    "ergebnis/composer-normalize": "^2.30.2",
+    "ergebnis/license": "^2.1"
   },
   "minimum-stability": "stable",
   "autoload": {
