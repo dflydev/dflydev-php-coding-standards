@@ -9,35 +9,30 @@ composer require dflydev/php-coding-standards
 Create a new `.php-cs-fixer.dist.php` file and within it add the following:
 
 ```php
-use Dflydev\PhpCsFixer\DflyConfig;
-use PhpCsFixer\Finder;
+use Ergebnis\PhpCsFixer\Config;
 
-$finder = Finder::create()
-    ->in(__DIR__.'/src');
+$config = Config\Factory::fromRuleSet(new Dflydev\PhpCsFixer\Config\RuleSet\Dflydev());
 
-return (new DflyConfig)
-    ->setFinder($finder)
-    ->setUsingCache(false)
-    ->setRiskyAllowed(true);
+$config->getFinder()->in(__DIR__);
+$config->setCacheFile(__DIR__ . '/.php-cs-fixer.cache');
+
+return $config;
 ```
 
-You can always change the default rule set by passing your rules to the function `setRules` like
+### Configuration with override rules
+
+💡 Optionally override rules from a rule set by passing in an array of rules to be merged in:
 
 ```php
-use Dflydev\PhpCsFixer\DflyConfig;
-use PhpCsFixer\Finder;
+use Ergebnis\PhpCsFixer\Config;
 
-$rules = [
-    '@PER' => true,
-    '@Symfony' => true,
-];
+$config = Config\Factory::fromRuleSet(new Dflydev\PhpCsFixer\Config\RuleSet\Dflydev(), [
+    'mb_str_functions' => false,
+    'strict_comparison' => false,
+]);
 
-$finder = Finder::create()
-    ->in(__DIR__.'/src');
+$config->getFinder()->in(__DIR__);
+$config->setCacheFile(__DIR__ . '/.php-cs-fixer.cache');
 
-return (new DflyConfig)
-    ->setFinder($finder)
-    ->setRules($rules)    
-    ->setUsingCache(false)
-    ->setRiskyAllowed(true);
+return $config;
 ```

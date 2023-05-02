@@ -1,12 +1,21 @@
 <?php 
 
-use Dflydev\PhpCsFixer\DflyConfig;
-use PhpCsFixer\Finder;
+$year = date('Y');
 
-$finder = Finder::create()
-    ->in(__DIR__.'/src');
+$header = <<< EOF
+ Copyright (c) $year dflydev.
+ 
+ For the full copyright and license information, please view
+ the LICENSE.md file that was distributed with this source code.
 
-return (new DflyConfig)
-    ->setFinder($finder)
-    ->setUsingCache(false)
-    ->setRiskyAllowed(true);
+ @see https://github.com/dflydev/dflydev-php-coding-standards
+EOF;
+
+use Ergebnis\PhpCsFixer\Config;
+
+$config = Config\Factory::fromRuleSet(new Dflydev\PhpCsFixer\Config\RuleSet\Dflydev($header));
+
+$config->getFinder()->in(__DIR__);
+$config->setCacheFile(__DIR__ . '/.php-cs-fixer.cache');
+
+return $config;    

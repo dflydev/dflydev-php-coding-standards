@@ -26,6 +26,7 @@
   "require": {
     "php": "~8.0.0 || ~8.1.0 || ~8.2.0",
     "ext-filter": "*",
+    "ergebnis/php-cs-fixer-config": "^5.5",
     "friendsofphp/php-cs-fixer": "~3.16.0"
   },
   "require-dev": {
@@ -34,12 +35,12 @@
   "minimum-stability": "stable",
   "autoload": {
     "psr-4": {
-      "Dflydev\\PhpCsFixer\\": "src"
+      "Dflydev\\PhpCsFixer\\Config\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Dflydev\\PhpCsFixer\\Test\\": "test"
+      "Dflydev\\PhpCsFixer\\Config\\Test\\": "test"
     }
   },
   "config": {

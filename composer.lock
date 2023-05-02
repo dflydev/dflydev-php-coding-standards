@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c4b9243ec9840be4fc949570c6bff083",
+    "content-hash": "e1d00c2f9dd519ac03c0eab5535b1df6",
     "packages": [
         {
             "name": "composer/pcre",
@@ -420,6 +420,67 @@
                 }
             ],
             "time": "2022-12-14T08:49:07+00:00"
+        },
+        {
+            "name": "ergebnis/php-cs-fixer-config",
+            "version": "5.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ergebnis/php-cs-fixer-config.git",
+                "reference": "b926460aa2a978dcb2cb6c8d79323d2abab27157"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ergebnis/php-cs-fixer-config/zipball/b926460aa2a978dcb2cb6c8d79323d2abab27157",
+                "reference": "b926460aa2a978dcb2cb6c8d79323d2abab27157",
+                "shasum": ""
+            },
+            "require": {
+                "ext-filter": "*",
+                "friendsofphp/php-cs-fixer": "~3.16.0",
+                "php": "~8.0.0 || ~8.1.0 || ~8.2.0"
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.30.2",
+                "ergebnis/license": "^2.1.0",
+                "fakerphp/faker": "^1.21.0",
+                "infection/infection": "~0.26.19",
+                "phpunit/phpunit": "^9.6.7",
+                "psalm/plugin-phpunit": "~0.18.4",
+                "rector/rector": "~0.15.25",
+                "symfony/filesystem": "^5.0.0 || ^6.0.0",
+                "symfony/process": "^5.0.0 || ^6.0.0",
+                "vimeo/psalm": "^5.9.0"
+            },
+            "type": "library",
+            "extra": {
+                "composer-normalize": {
+                    "indent-size": 2,
+                    "indent-style": "space"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ergebnis\\PhpCsFixer\\Config\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Möller",
+                    "email": "am@localheinz.com"
+                }
+            ],
+            "description": "Provides a configuration factory and multiple rule sets for friendsofphp/php-cs-fixer.",
+            "homepage": "https://github.com/ergebnis/php-cs-fixer-config",
+            "support": {
+                "issues": "https://github.com/ergebnis/php-cs-fixer-config/issues",
+                "source": "https://github.com/ergebnis/php-cs-fixer-config"
+            },
+            "time": "2023-04-27T17:31:51+00:00"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
