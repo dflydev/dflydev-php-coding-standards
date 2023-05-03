@@ -1,0 +1,66 @@
+{
+  "name": "dflydev/php-coding-standards",
+  "description": "This repository contains the coding standards used by Dragonfly team.",
+  "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "coding style",
+    "coding-standards",
+    "standards",
+    "coding",
+    "coding standards"
+  ],
+  "authors": [
+    {
+      "name": "Dragonfly Development Inc.",
+      "email": "info@dflydev.com",
+      "homepage": "http://dflydev.com"
+    },
+    {
+      "name": "Beau Simensen",
+      "email": "beau@dflydev.com",
+      "homepage": "http://beausimensen.com"
+    }
+  ],
+  "homepage": "https://github.com/dflydev/dflydev-php-coding-standards",
+  "require": {
+    "php": "~8.0.0 || ~8.1.0 || ~8.2.0",
+    "ext-filter": "*",
+    "ergebnis/php-cs-fixer-config": "^5.5",
+    "friendsofphp/php-cs-fixer": "~3.16.0"
+  },
+  "require-dev": {
+    "ergebnis/composer-normalize": "^2.30.2",
+    "ergebnis/license": "^2.1"
+  },
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Dflydev\\PhpCsFixer\\Config\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Dflydev\\PhpCsFixer\\Config\\Test\\": "test"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "ergebnis/composer-normalize": true
+    },
+    "platform": {
+      "php": "8.0.25"
+    },
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "composer-normalize": {
+      "indent-size": 2,
+      "indent-style": "space"
+    }
+  },
+  "scripts": {
+    "style:fix": "@php php-cs-fixer fix"
+  }
+}
