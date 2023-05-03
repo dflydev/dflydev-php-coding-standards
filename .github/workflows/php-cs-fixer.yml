@@ -1,0 +1,41 @@
+name: PHP CS Fixer
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: php-cs-fixer-${{ github.ref_name || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+
+  php-cs-fixer:
+    name: PHP CS Fixer ${{ matrix.php }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.2']
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: cs2pr
+
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@v2
+        with:
+          composer-options: "--no-progress --prefer-dist --optimize-autoloader"
+
+      - name: php-cs-fixer
+        run: composer run style:check -- --format=checkstyle | cs2pr
