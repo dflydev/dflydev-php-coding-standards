@@ -61,6 +61,7 @@
     }
   },
   "scripts": {
-    "style:fix": "@php php-cs-fixer fix"
+    "style:check": "@php ./vendor/bin/php-cs-fixer fix --dry-run",
+    "style:fix": "@php ./vendor/bin/php-cs-fixer fix"
   }
 }
