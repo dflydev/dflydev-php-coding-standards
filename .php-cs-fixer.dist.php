@@ -15,7 +15,7 @@ $license->save();
 
 use Ergebnis\PhpCsFixer\Config;
 
-$config = Config\Factory::fromRuleSet(new Dflydev\PhpCsFixer\Config\RuleSet\Dflydev($license->header()));
+$config = Config\Factory::fromRuleSet(new Dflydev\PhpCsFixer\Config\RuleSet\Dflydev());
 
 $config->getFinder()->in(__DIR__);
 $config->setCacheFile(__DIR__ . '/.php-cs-fixer.cache');
