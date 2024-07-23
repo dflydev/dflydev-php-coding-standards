@@ -13,7 +13,7 @@ final class Dflydev extends AbstractRuleSet implements ExplicitRuleSet
     protected int $targetPhpVersion = 80200;
 
     protected array $rules = [
-        '@PER' => true,
+        '@PER-CS' => true,
         '@Symfony' => true,
         'declare_strict_types' => true,
 
